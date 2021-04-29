@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Libreria_Generics</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Jugadores\AgregarJugadoresCS.cshtml" />
+    <None Remove="Jugadores\BuscarJugadoresCS.cshtml" />
+    <None Remove="Jugadores\EditarJugador.cshtml" />
+    <None Remove="Jugadores\EliminarJugadores.cshtml" />
+    <None Remove="Jugadores\EliminarTXT.cshtml" />
+    <None Remove="Jugadores\ImportacionCSV.cshtml" />
+    <None Remove="Jugadores\ImportacionJugadoresCS.cshtml" />
+    <None Remove="Jugadores\Index.cshtml" />
+    <None Remove="Jugadores\MostrarJugadores.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Jugadores\AgregarJugadoresCS.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Jugadores\BuscarJugadoresCS.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Jugadores\EditarJugador.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Jugadores\EliminarJugadores.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Jugadores\EliminarTXT.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Jugadores\ImportacionCSV.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Jugadores\ImportacionJugadoresCS.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Jugadores\Index.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Jugadores\MostrarJugadores.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
