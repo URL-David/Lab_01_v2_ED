@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Lab_01_v2_ED.Models.JugadoresModel>
 
 @{
-    ViewData["Title"] = "BuscarJugadoresCS";
+    ViewData["Title"] = "BuscarJugador";
 }
 
 <h1>Buscar Jugadores</h1>
@@ -9,7 +9,7 @@
 
 <nav class="navbar navbar-dark bg-dark">
 
-    <form class="form-inline my-2 my-lg-0" asp-controller="Jugadores" asp-action="BuscarJugador">
+    <form class="form-inline my-2 my-lg-0" asp-controller="Player" asp-action="BuscarJugador">
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
             <label class="btn btn-outline-light active">
                 <input type="radio" name="Buscar" id="Buscar" value="N" autocomplete="off" checked> Nombre

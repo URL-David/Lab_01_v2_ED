@@ -1,17 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Lab_01_v2_ED.Models
 {
-    public class JugadoresModel: IComparable
+    public class JugadoresModel : IComparable
     {
+
         public int Id { get; set; }
+        [Required(ErrorMessage = "El campo Nombre es obligatorio")]
         public string Nombre { get; set; }
+        [Required(ErrorMessage = "El campo Apellido es obligatorio")]
         public string Apellido { get; set; }
+        [Required(ErrorMessage = "El campo Salario es obligatorio")]
         public double Salario { get; set; }
+        [Required(ErrorMessage = "El campo Club es obligatorio")]
         public string Club { get; set; }
+        [Required(ErrorMessage = "El campo Posicion es obligatorio")]
         public string Posicion { get; set; }
 
         public Comparison<JugadoresModel> BuscaTXT = delegate (JugadoresModel Jugador1, JugadoresModel Jugador2)

@@ -7,7 +7,7 @@ using Libreria_Generics.Estruturas;
 using System.IO;
 using System.Diagnostics;
 using System.Linq;
-
+using Microsoft.VisualBasic;
 
 namespace Lab_01_v2_ED.Controllers
 {
@@ -20,7 +20,11 @@ namespace Lab_01_v2_ED.Controllers
         //Si MetodoSeleccionado = True -> Estan usando listas de C#
         //Si MetodoSeleccionado = False -> Estan usando listas genericas 
         public static bool MetodoSeleccionado;
+        public static bool Acceso = true;
         public static int IdJugadores = 1;
+
+        
+           
 
         //Escribir Log de Instrucciones en TXT
         //Se guardarán en un txt para evitar que salgan después de cada acción y archivar los tiempos de las ejecuciones
@@ -40,14 +44,19 @@ namespace Lab_01_v2_ED.Controllers
         // Pagina Principal
         public ActionResult Index()
         {
-            System.IO.File.WriteAllText(@"TiemposE.txt", "-------TIEMPOS DE LAS EJECUCIONES PRINCIPALES DEL PROGRAMA-------  \n \n");
-            return View();
+            if (Acceso) 
+            {
+                System.IO.File.WriteAllText(@"TiemposE.txt", "-------TIEMPOS DE LAS EJECUCIONES PRINCIPALES DEL PROGRAMA-------  \n \n");
+                Acceso = false;
+            }
+                return View();
         }
 
         //Seleccion De Lista Artesanal
         public ActionResult ListaGenerica()
         {
             MetodoSeleccionado = false;
+            EscribirLog("Lista Generica");
             return View("ImportacionJugadoresCS");
         }
 
@@ -55,6 +64,7 @@ namespace Lab_01_v2_ED.Controllers
         public ActionResult ListadeCSharp()
         {
             MetodoSeleccionado = true;
+            EscribirLog("Lista de C#");
             return View("ImportacionJugadoresCS");
         }
 
@@ -198,7 +208,7 @@ namespace Lab_01_v2_ED.Controllers
                 NuevoJugador.Id = IdJugadores;
                 IdJugadores++;
                 ListaGenJugadores.Add(NuevoJugador);
-                ViewBag.Jugadores = ListaGenJugadores;
+                ViewBag.Jugadores = ListaGenJugadores;         
             }
             Cronometro.Stop();
             EscribirLog("Se Creo Un Jugador");
@@ -280,11 +290,18 @@ namespace Lab_01_v2_ED.Controllers
         [HttpPost]
         public IActionResult ImportarCSV(IFormFile ArchivoCargado)
         {
+            if (ArchivoCargado == null)
+            {
+                
+                Interaction.Beep();
+                return View("ImportacionCSV");
+            }
+
             if (ArchivoCargado.FileName.Contains(".csv"))
             {
                 Cronometro.Restart();
                 try
-                {
+                { 
                     using (var stream = new StreamReader(ArchivoCargado.OpenReadStream()))
                     {
                         string Texto = stream.ReadToEnd().Remove(0, 71);
@@ -323,7 +340,9 @@ namespace Lab_01_v2_ED.Controllers
                 catch (Exception) { return View("ImportacionCSV"); }
             }
             else { return View("ImportacionCSV"); }
+
         }
+
 
         // GET: Editar Jugadores 
         public ActionResult Editar(int id)

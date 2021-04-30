@@ -5,22 +5,16 @@
 
 <div class="text-center">
     <h1>Importacion CSV</h1>
-    <h2>
-        Liga MLS
-
-    </h2>
+    <h2 style="color: darkblue;" class="display-4">Major League Soccer</h2>
 </div>
 <h5>
-
     Ingrese la direccion del Archivo:
-
 </h5>
 
+<form method="post" enctype="multipart/form-data" asp-controller="Player" asp-action="ImportarCSV">
 
-<form  method="post" enctype="multipart/form-data" asp-controller="Player" asp-action="ImportarCSV">
-   
-    <input type="file" class="form-control-file" name="ArchivoCargado"  />
+    <input type="file" class="form-control-file" name="ArchivoCargado" />
     <br />
-    <input type="submit"  value="Agregar" class="form-control-file"  />
+    <input type="submit" value="Agregar" class="form-control-file" />
 
 </form>

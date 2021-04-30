@@ -1,2 +1,4 @@
 -------TIEMPOS DE LAS EJECUCIONES PRINCIPALES DEL PROGRAMA-------  
  
+Lista de C#. Tiempo de Ejecucion en -> 0 Milisegundos 
+Lista Generica. Tiempo de Ejecucion en -> 0 Milisegundos 
